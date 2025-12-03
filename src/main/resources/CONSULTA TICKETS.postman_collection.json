@@ -1,0 +1,407 @@
+{
+	"info": {
+		"_postman_id": "ae2eb3dc-efba-418a-9f27-ef488f13700f",
+		"name": "CONSULTA TICKETS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13141984",
+		"_collection_link": "https://restless-shadow-885377.postman.co/workspace/Terpel-servicios~b25d4190-faf9-4718-acef-6ef978b405a4/collection/13141984-ae2eb3dc-efba-418a-9f27-ef488f13700f?action=share&source=collection_link&creator=13141984"
+	},
+	"item": [
+		{
+			"name": "usuarios",
+			"item": [
+				{
+					"name": "CREAR USUARIOS",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwZWRybyIsImlhdCI6MTc2NDc4MTYyNSwiZXhwIjoxNzY0Nzg1MjI1fQ.3z3WmHfn3IziGwB9be3Dv22yUvXiDBmN1hfgzcORKRg",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n  \"nombres\": \"juan\",\r\n  \"apellidos\": \"peresz\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/service/consultatickets/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"service",
+								"consultatickets",
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OBTENER USUARIOS",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwZWRybyIsImlhdCI6MTc2NDc3MzYxMSwiZXhwIjoxNzY0Nzc3MjExfQ.SVn-vRUW3vaqP7DKSWCAHQB6tDhGnFY26XJ6-4_9058",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/service/consultatickets/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"service",
+								"consultatickets",
+								"usuarios"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "USUARIOS  X ID",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwZWRybyIsImlhdCI6MTc2NDc3MzE3NywiZXhwIjoxNzY0Nzc2Nzc3fQ.7X6rmQatiUkUylAU8Kdstw7Y8ZIZyfcPCbl-TMS6bLA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/service/consultatickets/usuarios/7ea165de-dcf4-4a97-b5b6-c66df6cc31e1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"service",
+								"consultatickets",
+								"usuarios",
+								"7ea165de-dcf4-4a97-b5b6-c66df6cc31e1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ACTUALIZAR USUARIOS",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwZWRybyIsImlhdCI6MTc2NDczMTgwMiwiZXhwIjoxNzY0NzM1NDAyfQ._ilwN-0JOaTQuNRrlJIrnpd7MTskYAsHrbquYEbjcCc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n  \"nombres\": \"juan\",\r\n  \"apellidos\": \"Pedraza\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/service/consultatickets/usuarios/7fb0cd79-2023-4383-95e5-93a32c49b5b3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"service",
+								"consultatickets",
+								"usuarios",
+								"7fb0cd79-2023-4383-95e5-93a32c49b5b3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "tickets",
+			"item": [
+				{
+					"name": "CREAR TICKETS",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwZWRybyIsImlhdCI6MTc2NDc4MTYyNSwiZXhwIjoxNzY0Nzg1MjI1fQ.3z3WmHfn3IziGwB9be3Dv22yUvXiDBmN1hfgzcORKRg",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n  \"descripcion\": \"CASO RESUELTO\",\r\n  \"usuarioId\": \"963b3a78-996c-4310-991e-eae66523f8ad\",\r\n  \"status\": \"CERRADO\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/service/consultatickets/tickets",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"service",
+								"consultatickets",
+								"tickets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OBTENER TICKETS",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwZWRybyIsImlhdCI6MTc2NDc2ODUzMCwiZXhwIjoxNzY0NzcyMTMwfQ.QPV3XWOVfWEijVGKbjnoPVso013N29sp9Ixw3zyCadk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/service/consultatickets/tickets",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"service",
+								"consultatickets",
+								"tickets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TICKETS X ID",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwZWRybyIsImlhdCI6MTc2NDczMTgwMiwiZXhwIjoxNzY0NzM1NDAyfQ._ilwN-0JOaTQuNRrlJIrnpd7MTskYAsHrbquYEbjcCc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/service/consultatickets/tickets/7ece31be-9397-4642-9c30-37212e73b8dd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"service",
+								"consultatickets",
+								"tickets",
+								"7ece31be-9397-4642-9c30-37212e73b8dd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ACTUALIZAR TICKETS",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwZWRybyIsImlhdCI6MTc2NDczMTgwMiwiZXhwIjoxNzY0NzM1NDAyfQ._ilwN-0JOaTQuNRrlJIrnpd7MTskYAsHrbquYEbjcCc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"descripcion\": \"CASO CERRADO\",\r\n  \"status\": \"CERRADO\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/service/consultatickets/tickets/be5eadb0-f938-479e-aaeb-3bd7ac80cfb2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"service",
+								"consultatickets",
+								"tickets",
+								"be5eadb0-f938-479e-aaeb-3bd7ac80cfb2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FILTRO TICKETS",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwZWRybyIsImlhdCI6MTc2NDc2OTAwNSwiZXhwIjoxNzY0NzcyNjA1fQ.6KZgAhU1VnuOKSCpImAEE4v-Nh3zIaJfZ6NulXIMjI0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/service/consultatickets/tickets?status=&usuarioId=&page=0&size=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"service",
+								"consultatickets",
+								"tickets"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": ""
+								},
+								{
+									"key": "usuarioId",
+									"value": ""
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "jwt",
+			"item": [
+				{
+					"name": "generar token",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/service/consultatickets/auth/login?username=pedro",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"service",
+								"consultatickets",
+								"auth",
+								"login"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "pedro"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

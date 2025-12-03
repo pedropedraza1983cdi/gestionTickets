@@ -1,0 +1,112 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: ms-consulta-documentos-segmento
+  name: ms-consulta-documentos-segmento
+  namespace: poc-nttdata
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ms-consulta-documentos-segmento
+  template:
+    metadata:
+      labels:
+        app: mms-consulta-documentos-segmento
+    spec:
+      containers:
+        -
+          image: mauron/ms-poc-bdb:2
+          imagePullPolicy: Always
+          volumeMounts:
+            - name: vol-configmap-catalog
+              mountPath: "/opt/catalog"
+              readOnly: true
+          envFrom:
+            - configMapRef:
+                name: ms-consulta-documentos-segmento-properties
+            - secretRef:
+                name: ms-consulta-documentos-segmento-secret
+          name: ms-consulta-documentos-segmento
+          ports:
+            -
+              containerPort: 8080
+          livenessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /actuator/health
+              port: 8080
+            initialDelaySeconds: 100
+            periodSeconds: 3
+            successThreshold: 1
+            timeoutSeconds: 2
+          readinessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /actuator/health
+              port: 8080
+            initialDelaySeconds: 100
+            periodSeconds: 3
+            successThreshold: 1
+            timeoutSeconds: 2
+          resources:
+            requests:
+              memory: 100Mi
+              cpu: 250m
+            limits:
+              memory: 512Mi
+              cpu: 500m
+      restartPolicy: Always
+      volumes:
+        - name: vol-configmap-catalog
+          configMap:
+            name: ms-consulta-documentos-segmento-catalog
+            items:
+              - key: errorCatalog.json
+                path: errorCatalog.json
+---
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: ms-consulta-documentos-segmento
+  name: ms-consulta-documentos-segmento
+  namespace: poc-nttdata
+spec:
+  ports:
+    - port: 8080
+      name: http
+      protocol: TCP
+      targetPort: 8080
+  selector:
+    app: ms-consulta-documentos-segmento
+  type: LoadBalancer
+---
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: hpa-ms-consulta-documentos-segmento
+  namespace: poc-nttdata
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: ms-consulta-documentos-segmento
+  minReplicas: 1
+  maxReplicas: 2
+  metrics:
+    - type: Resource
+      resource:
+        name: memory
+        target:
+          type: Utilization
+          averageUtilization: 70
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 70
